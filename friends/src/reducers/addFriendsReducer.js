@@ -13,7 +13,14 @@ const initialState = {
 function showFriendsReducer(state = initialState, action) {
   console.log(":: IN ADD FRIENDS REDUCER ::");
   console.log(":: ADD FRIENDS REDUCER :: ACTION TYPE IS " + action.type);
-  console.log(":: ADD FRIENDS REDUCER :: ACTION PAYLOAD IS " + action.payload);
+  console.log(
+    ":: ADD FRIENDS REDUCER :: ACTION PAYLOAD IS " +
+      JSON.stringify(action.payload)
+  );
+  console.log(
+    ":: ADD FRIENDS REDUCER :: ACTION PAYLOAD IS " +
+      JSON.stringify(state.friends)
+  );
 
   switch (action.type) {
     case ADD_FRIENDS_SUCCESS: {

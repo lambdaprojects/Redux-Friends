@@ -27,13 +27,11 @@ class Friends extends React.Component {
           <div className="addr-bk-heading">
             <h1> My Address Book</h1>
             <div className="nav-links">
-              <NavLink className="nav-link" to="/">
+              <NavLink exact to="/">
                 Home
               </NavLink>
-              <NavLink className="nav-link">Contacts</NavLink>
-              <NavLink className="nav-link" to="/add-friends-form">
-                Add
-              </NavLink>
+              <NavLink to="/add-friends-form">Contacts</NavLink>
+              <NavLink to="/add-friends-form">Add</NavLink>
             </div>
           </div>
         </nav>
@@ -52,7 +50,9 @@ class Friends extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    friends: state.friends.friends
+    friends: state.friends.friends,
+    isLoading: state.friends.isLoading,
+    error: state.friends.error
   };
 };
 export default connect(
