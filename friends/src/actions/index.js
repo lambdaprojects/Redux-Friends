@@ -8,7 +8,7 @@ export const getFriends = () => dispatch => {
   dispatch({ type: SHOW_FRIENDS_START });
   console.log(":: CALLING GET FRIENDS ::");
   axios
-    .get("localhost:5000/api/friends/")
+    .get("http://localhost:5000/api/friends/")
     .then(res => {
       console.log(res.data);
       dispatch({
