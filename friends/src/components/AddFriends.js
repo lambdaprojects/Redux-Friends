@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addFriends } from "../actions";
-import { getFriends } from "../actions";
 
 class AddFriends extends React.Component {
   constructor() {
@@ -29,15 +28,12 @@ class AddFriends extends React.Component {
   addFriend = e => {
     e.preventDefault();
     this.props.addFriends(this.state.newFriend);
-    this.props.getFriends();
     this.setState({
-      newFriend: { name: "", age: 0, email: "" },
-      isLoading: false,
-      error: ""
+      newFriend: { name: "", age: 0, email: "" }
     });
   };
   render() {
-    console.log(":: NEW FRIEND IN RENDER IS ::" + this.state.newFriend);
+    console.log(":: NEW FRIEND IN RENDER IS ::" + this.state.friends);
     return (
       <div className="add-contact">
         <form onSubmit={this.addFriend}>
@@ -84,16 +80,14 @@ class AddFriends extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(
-    ":: mapStateToProps :: newFriend is " + state.newFriend.newFriend
-  );
+  console.log(":: mapStateToProps :: newFriend is " + state.friends.friends);
   return {
-    newFriend: state.newFriend.newFriend,
-    isLoading: state.newFriend.isLoading,
-    error: state.newFriend.error
+    friends: state.friends.friends,
+    isLoading: state.friends.isLoading,
+    error: state.friends.error
   };
 };
 export default connect(
   mapStateToProps,
-  { addFriends, getFriends }
+  { addFriends }
 )(AddFriends);

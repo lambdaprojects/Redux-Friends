@@ -10,7 +10,11 @@ function ShowFriends(props) {
           <p>Email: {friend.email}</p>
           <p className="contact-images">
             <img src="../pencil.png" alt="edit" />
-            <img src="../bin.png" alt="trash" />
+            <img
+              src="../bin.png"
+              alt="trash"
+              onClick={() => props.delFriend(friend.id)}
+            />
           </p>
         </div>
       ))}

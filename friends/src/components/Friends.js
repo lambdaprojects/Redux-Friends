@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getFriends } from "../actions";
+import { getFriends, delFriends } from "../actions";
 import { Route, NavLink } from "react-router-dom";
 import ShowFriends from "./ShowFriends";
 import AddFriends from "./AddFriends";
@@ -17,6 +17,10 @@ class Friends extends React.Component {
 
   addFriends = () => {
     console.log(":: CALLING ADD FRIENDS IN FRIEND.JS ::");
+  };
+
+  delFriend = id => {
+    this.props.delFriends(id);
   };
 
   render() {
@@ -39,7 +43,11 @@ class Friends extends React.Component {
           exact
           path="/"
           render={props => (
-            <ShowFriends {...props} friends={this.props.friends} />
+            <ShowFriends
+              {...props}
+              friends={this.props.friends}
+              delFriend={this.delFriend}
+            />
           )}
         />
         <Route exact path="/add-friends-form" component={AddFriends} />
@@ -57,5 +65,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { getFriends }
+  { getFriends, delFriends }
 )(Friends);
