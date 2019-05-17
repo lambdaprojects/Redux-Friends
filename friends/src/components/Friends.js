@@ -4,6 +4,8 @@ import { getFriends, delFriends } from "../actions";
 import { Route, NavLink } from "react-router-dom";
 import ShowFriends from "./ShowFriends";
 import AddFriends from "./AddFriends";
+import PrivateRoute from "../PrivateRoute";
+import Login from "./Login";
 
 class Friends extends React.Component {
   constructor() {
@@ -39,10 +41,10 @@ class Friends extends React.Component {
             </div>
           </div>
         </nav>
-        <Route
+        <PrivateRoute
           exact
           path="/"
-          render={props => (
+          component={props => (
             <ShowFriends
               {...props}
               friends={this.props.friends}
@@ -50,7 +52,8 @@ class Friends extends React.Component {
             />
           )}
         />
-        <Route exact path="/add-friends-form" component={AddFriends} />
+        <Route path="/login" component={Login} />
+        <PrivateRoute exact path="/add-friends-form" component={AddFriends} />
       </div>
     );
   }

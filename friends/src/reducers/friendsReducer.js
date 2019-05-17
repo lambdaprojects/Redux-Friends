@@ -14,10 +14,13 @@ import {
   ADD_FRIENDS_FAILURE
 } from "../actions";
 
+import { LOGIN_SUCCESS, LOGIN_ABSOLUTE_FAILURE, LOGIN_START } from "../actions";
+
 const initialState = {
   friends: [],
   error: "",
-  isLoading: false
+  isLoading: false,
+  isLogginIn: false
 };
 
 function friendsReducer(state = initialState, action) {
@@ -26,6 +29,17 @@ function friendsReducer(state = initialState, action) {
   console.log("ACTION PAYLOAD IS " + action.payload);
 
   switch (action.type) {
+    case LOGIN_START:
+      return {
+        ...state,
+        isLoggingIn: true,
+        error: ""
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        isLoggingIn: false
+      };
     case SHOW_FRIENDS_SUCCESS: {
       return {
         ...state,
