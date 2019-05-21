@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  background-color: #1f0340;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.address-book {
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  color: white;
+}
+
+.addr-bk-heading {
+  width: 100%;
+  border-bottom: 2px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.addr-bk-heading h1 {
+  width: 100%;
+}
+.contacts {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 1%;
+  border-bottom: 2px solid red;
+}
+
+.contact-details {
+  width: 14%;
+  border: 1px solid white;
+  text-align: left;
+  padding-left: 10px;
+  margin: 1.25%;
+}
+
+.contact-images {
+  width: 40%;
+  text-align: right;
+  margin-left: 60%;
+}
+
+.contact-images img {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.nav-links {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+.nav-link {
+  color: palevioletred;
+  text-decoration: none;
+}
+.add-contact-form {
+  display: flex;
+  width: 25%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 3%;
+  padding-bottom: 1%;
+  border-bottom: 2px solid lightgray;
+  margin-left: 35%;
+}
+.form-label {
+  width: 25%;
+  text-align: left;
+  margin-top: 5%;
+}
+
+.form-input {
+  width: 75%;
+  margin-top: 5%;
+  height: 30px;
+}
+
+.form-button {
+  width: 50%;
+  margin-top: 10%;
+}
+
+.form-button button {
+  width: 90%;
+  height: 25px;
+  border-radius: 5px;
+  margin-left: 65%;
+}
+
+.input-contact {
+  width: 90%;
+  margin-left: 5%;
+  height: 25px;
+}
+
+.add-contact {
+  margin-top: 5%;
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: plum;
+  margin-right: 8px;
+}
+
+.nav-links a:last-of-type {
+  margin-right: 0;
+}
+
+.nav-links a.active {
+  border-bottom: 1px solid white;
+}
